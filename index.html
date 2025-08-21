@@ -1,120 +1,121 @@
-
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Yara Kudo - inCruises</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') no-repeat center center;
-      background-size: cover;
-      text-align: center;
-      color: white;
-      padding: 100px 20px;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .hero h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      font-weight: 400;
-    }
-
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .features {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 30px 0;
-      flex-wrap: wrap;
-    }
-
-    .feature {
-      max-width: 200px;
-    }
-
-    .feature i {
-      font-size: 32px;
-      margin-bottom: 10px;
-      color: #007bff;
-    }
-
-    .btn {
-          display: inline-block;
-      background-color: #007bff;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-
-    .contacts {
-      margin-top: 40px;
-      font-size: 16px;
-    }
-
-    .contacts i {
-      margin-right: 8px;
-      color: #007bff;
-    }
-
-    a {
-      color: #007bff;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruzeiro Dobro Sonho Japa - Experiência de Luxo Japonês</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .hero { background-image: url('https://images.pexels.com/photos/21706325/pexels-photo-21706325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-size: cover; background-position: center; }
+        .animate-fade-in { animation: fadeIn 1s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .gallery img { transition: transform 0.3s; }
+        .gallery img:hover { transform: scale(1.05); }
+    </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
 
-  <div class="hero">
-    <h1>Viaje de Cruzeiro</h1>
-    <h1>Ganhe o Dobro com Yara Kudo</h1>
-    <h2>Participe do clube inCruises™ e transforme sua forma de viajar</h2>
-  </div>
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-600">Cruzeiro Dobro Sonho Japa</div>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-indigo-600 transition">Início</a></li>
+                <li><a href="#sobre" class="hover:text-indigo-600 transition">Sobre</a></li>
+                <li><a href="#itinerario" class="hover:text-indigo-600 transition">Itinerário</a></li>
+                <li><a href="#galeria" class="hover:text-indigo-600 transition">Galeria</a></li>
+                <li><a href="#contato" class="hover:text-indigo-600 transition">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="section">
-    <h2><strong>Por que escolher o inCruises™?</strong></h2>
-    <p>Com apenas US100/mês, você recebe US200 em Cruise Dollars. Aproveite cruzeiros em mais de 5.000 destinos!</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero h-screen flex items-center justify-center text-white text-center">
+        <div class="bg-black bg-opacity-50 p-10 rounded-lg animate-fade-in">
+            <h1 class="text-5xl font-bold mb-4">Bem-vindo ao Cruzeiro Dobro Sonho Japa</h1>
+            <p class="text-xl mb-6">Uma experiência dupla de sonho com toques japoneses de luxo e aventura no mar.</p>
+            <a href="#contato" class="bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition">Reserve Agora</a>
+        </div>
+    </section>
 
-    <div class="features">
-      <div class="feature">
-        <i class="fas fa-ship"></i>
-        <p>+500 Navios</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-dollar-sign"></i>
-        <p>Ganhe Cruise Dollars</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-percent"></i>
-        <p>Economize 50%</p>
-      </div>
-    </div>
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Sobre Nós</h2>
+            <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10">
+                <img src="https://images.pexels.com/photos/1703909/pexels-photo-1703909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio iluminado à noite" class="rounded-lg shadow-lg">
+                <p class="text-lg">O Cruzeiro Dobro Sonho Japa combina o encanto da cultura japonesa com o luxo de um cruzeiro duplo inesquecível. Desfrute de gastronomia autêntica, atividades zen e vistas deslumbrantes do oceano. Nossa missão é proporcionar sonhos dobrados em uma jornada única e relaxante.</p>
+            </div>
+        </div>
+    </section>
 
-    <a href="https://yarakudo.incruises.com" class="btn">INSCREVA-SE AGORA</a>
-    <div class="contacts">
-      <p><i class="fab fa-whatsapp"></i>+81 08066143393</p>
-      <p><i class="fab fa-instagram"></i><a href="https://www.instagram.com/yarakudo" target="_blank">@yarakudo</a></p>
-    </div>
-  </div>
+    <!-- Itinerário Section -->
+    <section id="itinerario" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Itinerário</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md animate-fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Dia 1: Embarque em Tóquio</h3>
+                    <p>Partida do porto com coquetel de boas-vindas e jantar japonês tradicional.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md animate-fade-in" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-semibold mb-4">Dia 2-3: Navegação pelo Mar do Japão</h3>
+                    <p>Atividades a bordo: aulas de origami, spa zen e shows culturais.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md animate-fade-in" style="animation-delay: 0.4s;">
+                    <h3 class="text-2xl font-semibold mb-4">Dia 4: Chegada em Kyoto</h3>
+                    <p>Excursões terrestres para templos e jardins históricos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section id="galeria" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Galeria</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery">
+                <img src="https://images.pexels.com/photos/3925096/pexels-photo-3925096.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio no mar" class="rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/14566726/pexels-photo-14566726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Cruzeiro perto da costa" class="rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/20643789/pexels-photo-20643789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio Nippon Maru em Yokohama" class="rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/31133221/pexels-photo-31133221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio pirata no Lago Ashi com Monte Fuji" class="rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/13066888/pexels-photo-13066888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Vista aérea de cruzeiro" class="rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/1703909/pexels-photo-1703909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio iluminado" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-indigo-600 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Entre em Contato</h2>
+            <form class="max-w-lg mx-auto space-y-4">
+                <input type="text" placeholder="Seu Nome" class="w-full p-4 rounded-lg">
+                <input type="email" placeholder="Seu Email" class="w-full p-4 rounded-lg">
+                <textarea placeholder="Sua Mensagem" class="w-full p-4 rounded-lg h-32"></textarea>
+                <button type="submit" class="bg-white text-indigo-600 px-8 py-3 rounded-full hover:bg-gray-100 transition w-full">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>&copy; 2025 Cruzeiro Dobro Sonho Japa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
