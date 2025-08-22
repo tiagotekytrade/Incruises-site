@@ -3,119 +3,673 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cruzeiro Dobro Sonho Japa - Experiência de Luxo Japonês</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Cruzeiros do Sonho - Sua Jornada Premium Começa Aqui</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
-        .hero { background-image: url('https://images.pexels.com/photos/21706325/pexels-photo-21706325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-size: cover; background-position: center; }
-        .animate-fade-in { animation: fadeIn 1s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .gallery img { transition: transform 0.3s; }
-        .gallery img:hover { transform: scale(1.05); }
+        :root {
+            --primary: #1a365d;
+            --secondary: #d4af37;
+            --accent: #2a4a7f;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c29a30;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 10px auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Destinations Section */
+        .destinations {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+        
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .destination-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .destination-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .destination-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .destination-card:hover .destination-image img {
+            transform: scale(1.1);
+        }
+        
+        .destination-info {
+            padding: 20px;
+        }
+        
+        .destination-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        .destination-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+        }
+        
+        .testimonials .section-title h2 {
+            color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            color: white;
+            position: relative;
+        }
+        
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(26, 54, 93, 0.9), rgba(42, 74, 127, 0.9));
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid, .destination-grid, .testimonial-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-
+<body>
     <!-- Header -->
-    <header class="bg-white shadow-md fixed w-full z-10">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-indigo-600">Cruzeiro Dobro Sonho Japa</div>
-            <ul class="flex space-x-6">
-                <li><a href="#home" class="hover:text-indigo-600 transition">Início</a></li>
-                <li><a href="#sobre" class="hover:text-indigo-600 transition">Sobre</a></li>
-                <li><a href="#itinerario" class="hover:text-indigo-600 transition">Itinerário</a></li>
-                <li><a href="#galeria" class="hover:text-indigo-600 transition">Galeria</a></li>
-                <li><a href="#contato" class="hover:text-indigo-600 transition">Contato</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-ship"></i>
+                <span>Cruzeiros do Sonho</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Destinos</a></li>
+                    <li><a href="#">Pacotes</a></li>
+                    <li><a href="#">Experiências</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="#reservas" class="btn">Reservar Agora</a>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero h-screen flex items-center justify-center text-white text-center">
-        <div class="bg-black bg-opacity-50 p-10 rounded-lg animate-fade-in">
-            <h1 class="text-5xl font-bold mb-4">Bem-vindo ao Cruzeiro Dobro Sonho Japa</h1>
-            <p class="text-xl mb-6">Uma experiência dupla de sonho com toques japoneses de luxo e aventura no mar.</p>
-            <a href="#contato" class="bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition">Reserve Agora</a>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Descubra o Mundo por Mar</h1>
+            <p>Experimente a combinação perfeita de luxo, aventura e relaxamento em nossos cruzeiros exclusivos pelos destinos mais paradisíacos do planeta.</p>
+            <a href="#explorar" class="btn">Explorar Cruzeiros</a>
         </div>
     </section>
 
-    <!-- Sobre Section -->
-    <section id="sobre" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Sobre Nós</h2>
-            <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10">
-                <img src="https://images.pexels.com/photos/1703909/pexels-photo-1703909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio iluminado à noite" class="rounded-lg shadow-lg">
-                <p class="text-lg">O Cruzeiro Dobro Sonho Japa combina o encanto da cultura japonesa com o luxo de um cruzeiro duplo inesquecível. Desfrute de gastronomia autêntica, atividades zen e vistas deslumbrantes do oceano. Nossa missão é proporcionar sonhos dobrados em uma jornada única e relaxante.</p>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que Escolher Nossos Cruzeiros?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Experiência Premium</h3>
+                    <p>Serviço de primeira classe, gastronomia refinada e acomodações luxuosas para tornar sua viagem inesquecível.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Destinos Exclusivos</h3>
+                    <p>Roteiros cuidadosamente planejados para levar você aos lugares mais deslumbrantes do mundo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança e Conforto</h3>
+                    <p>Priorizamos seu bem-estar com os mais altos padrões de segurança e conforto em todas as nossas embarcações.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Itinerário Section -->
-    <section id="itinerario" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Itinerário</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md animate-fade-in">
-                    <h3 class="text-2xl font-semibold mb-4">Dia 1: Embarque em Tóquio</h3>
-                    <p>Partida do porto com coquetel de boas-vindas e jantar japonês tradicional.</p>
+    <!-- Destinations Section -->
+    <section class="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Destinos Populares</h2>
+            </div>
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1546436836-07a6f3fa4bed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Caribe">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Caribe</h3>
+                        <p>Águas cristalinas, praias paradisíacas e cultura vibrante em cada porto.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 7 dias</span>
+                            <span><i class="fas fa-dollar-sign"></i> A partir de R$ 3.499</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md animate-fade-in" style="animation-delay: 0.2s;">
-                    <h3 class="text-2xl font-semibold mb-4">Dia 2-3: Navegação pelo Mar do Japão</h3>
-                    <p>Atividades a bordo: aulas de origami, spa zen e shows culturais.</p>
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1596445836561-991bcd39ab2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mediterrâneo">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Mediterrâneo</h3>
+                        <p>Explore a rica história, arquitetura deslumbrante e gastronomia incomparável.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 10 dias</span>
+                            <span><i class="fas fa-dollar-sign"></i> A partir de R$ 4.999</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md animate-fade-in" style="animation-delay: 0.4s;">
-                    <h3 class="text-2xl font-semibold mb-4">Dia 4: Chegada em Kyoto</h3>
-                    <p>Excursões terrestres para templos e jardins históricos.</p>
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nordeste">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Nordeste Brasileiro</h3>
+                        <p>Beleza natural, cultura vibrante e o calor do povo brasileiro.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 5 dias</span>
+                            <span><i class="fas fa-dollar-sign"></i> A partir de R$ 1.999</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Galeria Section -->
-    <section id="galeria" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Galeria</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery">
-                <img src="https://images.pexels.com/photos/3925096/pexels-photo-3925096.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio no mar" class="rounded-lg shadow-lg">
-                <img src="https://images.pexels.com/photos/14566726/pexels-photo-14566726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Cruzeiro perto da costa" class="rounded-lg shadow-lg">
-                <img src="https://images.pexels.com/photos/20643789/pexels-photo-20643789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio Nippon Maru em Yokohama" class="rounded-lg shadow-lg">
-                <img src="https://images.pexels.com/photos/31133221/pexels-photo-31133221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio pirata no Lago Ashi com Monte Fuji" class="rounded-lg shadow-lg">
-                <img src="https://images.pexels.com/photos/13066888/pexels-photo-13066888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Vista aérea de cruzeiro" class="rounded-lg shadow-lg">
-                <img src="https://images.pexels.com/photos/1703909/pexels-photo-1703909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Navio iluminado" class="rounded-lg shadow-lg">
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que Nossos Passageiros Dizem</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"A viagem superou todas as minhas expectativas. O serviço foi impecável e os destinos simplesmente deslumbrantes. Já estou planejando minha próxima viagem!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maria Silva">
+                        </div>
+                        <div>
+                            <h4>Maria Silva</h4>
+                            <p>Cruzeiro Caribe</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"A experiência a bordo foi magnífica. A comida, o entretenimento e o conforto do navio tornaram essas férias inesquecíveis para toda a família."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João Santos">
+                        </div>
+                        <div>
+                            <h4>João Santos</h4>
+                            <p>Cruzeiro Mediterrâneo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"A equipe foi extremamente atenciosa e profissional. Cada detalhe foi cuidadosamente planejado, tornando esta viagem a mais relaxante que já fiz."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Costa">
+                        </div>
+                        <div>
+                            <h4>Ana Costa</h4>
+                            <p>Cruzeiro Nordeste</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato Section -->
-    <section id="contato" class="py-20 bg-indigo-600 text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Entre em Contato</h2>
-            <form class="max-w-lg mx-auto space-y-4">
-                <input type="text" placeholder="Seu Nome" class="w-full p-4 rounded-lg">
-                <input type="email" placeholder="Seu Email" class="w-full p-4 rounded-lg">
-                <textarea placeholder="Sua Mensagem" class="w-full p-4 rounded-lg h-32"></textarea>
-                <button type="submit" class="bg-white text-indigo-600 px-8 py-3 rounded-full hover:bg-gray-100 transition w-full">Enviar</button>
-            </form>
+    <!-- CTA Section -->
+    <section class="cta" id="reservas">
+        <div class="container cta-content">
+            <h2>Pronto para Embarcar na Jornada dos Seus Sonhos?</h2>
+            <p>Entre em contato conosco e reserve agora mesmo o seu lugar no próximo cruzeiro de luxo.</p>
+            <a href="#" class="btn">Fazer Reserva</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; 2025 Cruzeiro Dobro Sonho Japa. Todos os direitos reservados.</p>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Cruzeiros do Sonho</h3>
+                    <p>Oferecendo as melhores experiências em cruzeiros de luxo pelos destinos mais desejados do mundo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Destinos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Caribe</a></li>
+                        <li><a href="#">Mediterrâneo</a></li>
+                        <li><a href="#">Nordeste Brasileiro</a></li>
+                        <li><a href="#">Alasca</a></li>
+                        <li><a href="#">Sudeste Asiático</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Pacotes</a></li>
+                        <li><a href="#">Promoções</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (11) 3456-7890</li>
+                        <li><i class="fas fa-envelope"></i> contato@cruzeirodosonho.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000, São Paulo</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Cruzeiros do Sonho. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Simple JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
         });
     </script>
-
 </body>
 </html>
